@@ -23,5 +23,21 @@ spec:
     spec:
       containers:
       - name: mongodb
-        image: bharathchandu/mongodb:v1    
+        image: bharathchandu/mongodb:v1  
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb
+  namespace: roboshop
+spec:
+  selector:
+    project: roboshop
+    component: mongodb
+    tier: db
+  ports:
+    - protocol: TCP
+      port: 27017
+      targetPort: 27017
   
