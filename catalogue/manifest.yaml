@@ -42,17 +42,17 @@ spec:
         ports:
         - name: liveness-port
           containerPort: 8080
-        redinessprobe:
+        redinessProbe:
           httpGet:
             path: /health
             port: liveness-port
-          failurethreshold: 1
+          failureThreshold: 1
           periodSeconds: 15
         livenessProbe:
           httpGet:
             path: /health
             port: liveness-port
-          failurethreshold: 1
+          failureThreshold: 1
           periodSeconds: 15
 
 ---
