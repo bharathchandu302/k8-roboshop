@@ -36,7 +36,7 @@ spec:
       - name: catalogue
         image: bharathchandu/catalogue:v1
         imagePullPolicy: Always
-          envFrom:
+        envFrom:
           - configMapRef:
               name: catalogue
         ports:
